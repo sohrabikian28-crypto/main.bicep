@@ -1,0 +1,17 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vnetName": { "value": "myVnetProd" },
+    "vnetLocation": { "value": "eastus" },
+    "vnetAddressPrefix": { "value": "10.0.0.0/16" },
+
+    "subnet1Name": { "value": "frontend" },
+    "subnet1Prefix": { "value": "10.0.1.0/24" },
+    "subnet2Name": { "value": "backend" },
+    "subnet2Prefix": { "value": "10.0.2.0/24" },
+
+    "nsg1Name": { "value": "frontend-nsg" },
+    "nsg2Name": { "value": "backend-nsg" }
+  }
+}

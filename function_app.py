@@ -7,20 +7,20 @@ app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
 def http_trigger(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
-    name = req.params.get('name')
-    if not name:
+    lastname = req.params.get('lastname')
+    if not lastname:
         try:
             req_body = req.get_json()
         except ValueError:
             pass
         else:
-            name = req_body.get('name')
+            lastname = req_body.get('lastname')
 
-    if name:
-        logging.info(f"Received name: {name}")
-        return func.HttpResponse(f"Hello, {name}. This HTTP triggered function executed successfully.")
+    if lastname:
+        logging.info(f"Received lastname: {lastname}")
+        return func.HttpResponse(f"Hello, {lastname}. This HTTP triggered function executed successfully.")
     else:
         return func.HttpResponse(
-             "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.",
+             "This HTTP triggered function executed successfully. Pass a lastname in the query string or in the request body for a personalized response.",
              status_code=200
         )
